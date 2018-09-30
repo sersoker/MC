@@ -1,0 +1,31 @@
+Fichero lex extension .l
+La unica parte obligatoria son las reglas.
+	(Regla por defecto:	
+		.		{ECHO;}		
+		o
+		.		{}	
+	)
+
+
+En la seccion de declaraciones:
+Codigo C necesario, librerias, variables o constantes.
+Delimitado por las secuencias ‘%{‘ y ‘%}’
+Tambien se definen expresiones regulares que se necesitarán como alias(numero,entero,etc)
+
+*Plantilla main Pagina9
+
+
+Crear el codigo 			lex wordCounter.l
+Compilarlo 					gcc lex.yy.c -o programa -ll
+Ejecutarlo					./programa Documento\ sin\ título\ 1
+
+
+
+Start conditions para parsear codigo html combinado con c
+
+%Start estado1 estado2
+
+<estado1>expresion 		{codigo Para la expresion solo en el estado1}
+
+*** BEGIN estado*; 	(dentor de las llaves para cambiar de estado)
+	BEGIN 0;		(cambia al estado original)

@@ -1,0 +1,104 @@
+EJERCICIO 1
+q0,€,R=qf,R		//No llega nada, cadena aceptada
+
+q0,a,R=q0,AR	//Llega A, pila con estado R
+q0,a,A=q0,AA	//Siguen llegando A
+q0,b,A=q1,BA	//Llega B, con A en pila
+q0,d,A=qf,€		//Llega D B y C iguales, estado final.
+
+
+q1,b,B=q1,BB	//Llegan B, añado a la pila
+q1,c,B=q2,€		//Llega C, quito una B y paso a estado siguiente
+
+
+q2,c,B=q2,€		//Llega C, sigo quitando B
+q2,d,A=qf,€		//Llega una D y hay una A en la pila, estado final
+q2,d,B=q5,€		//Llega una D, hay B en la pila, paso a quitar exceso de B (A y D tienen que ser iguales)
+q2,c,A=q6,A 	//Llega una C, hay A en la pila, quitar exceso de C (A y D tienen que ser iguales)
+
+
+q4,d,A=q4,€		//Llega D, hay A en la pila, quitamos
+q4,€,R=qf,R
+
+q5,€,B=q5,€		//Quita B mientras queden
+q5,d,A=q4,€		//Llega una D, hay A tope de pila, pasamos a ver si son iguales
+
+
+q6,c,A=q6,A		//Aceptar c mientras queden
+q6,d,A=q4,€		//Llega una D, hay A tope de pila, pasamos a ver si son iguales
+
+
+qf,€,A=qf,€		//Si llega a este estado y quedan A, las quita
+qf,€,R=qf,€		//Si llega a estado final, acepta la cadena sin añadir nada hasta encontrar R
+
+
+
+EJERCICIO 2 Prefijo epsilon no cumple la propiedad prefijo
+
+
+q0,0,R=q0,XR	//Llega un 0 inicial, añadimos X, seguimos en el mismo estado
+q0,0,X=q0,XX	//Siguen Llegando 0
+q0,1,X=q1,XX	//Llega 1, cambiamos de estado
+q0,1,R=q1,XX	//Inicialmente llega 1, cambiamos de estado
+q0,2,R=q2,XX	//Inicialmente llega 2, cambiamnos de estado
+q0,2,X=q2,XX	//Llega 2 despues de uno o varios 0, cambiamos de estado
+
+q0,3,X=q3,€		//Llega 3 despues de uno o varios 0, cambiamos de estado y quitamos el primer elemento de la pila
+
+q0,€,R=qf,€		//No llega nada, estado final
+ 
+q1,1,X=q1,XX 	//Llegan 1, seguimos
+q1,2,X=q2,XX	//Llega un 2, cambiamos de estado
+q1,3,X=q3,X		//Llega un 3, cambiamos de estado y quitamos un elemento de la pila
+
+q2,2,X=q2,XX	//Llegan 2, seguimos
+q2,3,X=q3,X		//Llega un 3, cambiamos de estado y quitamos un elemento de la pila
+
+q3,3,X=q3,€		//Llegan 3, y hay elementos en la pila, seguimos quitando
+q3,€,R=qf,€		//Llegamos al final de la pila y no llega nada, vamos a estado final
+
+
+
+
+EJERCICIO 3
+L2 = ({q0 ,q1 , q2, q3,q4},{€,0,1,2,3,4},{X},δ, q0,{qf})
+
+q0,0,R=q0,XR	//Llega un 0 inicial, añadimos X, seguimos en el mismo estado
+q0,0,X=q0,XX	//Siguen Llegando 0
+q0,1,X=q1,XX	//Llega 1, cambiamos de estado
+q0,1,R=q1,XX	//Inicialmente llega 1, cambiamos de estado
+q0,2,R=q2,XX	//Inicialmente llega 2, cambiamnos de estado
+q0,2,X=q2,XX	//Llega 2 despues de uno o varios 0, cambiamos de estado
+q0,3,R=q3,XX	//Inicialmente llega 3, cambiamnos de estado
+q0,3,X=q3,XX	//Llega 3 despues de uno o varios 0, cambiamos de estado
+q0,4,X=q4,€		//Llega un 4 y hay al menos un 0 en la pila (si no es asi, no se puede aceptar la cadena)
+q0,€,R=qf,R		//No llega nada, vamos a estado final
+
+q1,1,X=q1,XX 	//Llegan 1, seguimos
+q1,2,X=q2,XX	//Llega un 2, cambiamos de estado
+q1,3,X=q3,XX	//Llega un 3, cambiamos de estado
+q1,4,X=q4,€		//Llega un 4, cambiamos de estado y quitamos el primero de la pila
+
+q2,2,X=q2,XX	//Llegan 2, seguimos
+q2,3,X=q3,XX	//Llega un 3, cambiamos de estado
+q2,4,X=q4,€		//Llega un 4, cambiamos de estado y quitamos el primero de la pila
+
+q3,3,X=q3,XX	//Llegan 3, continuamos
+q3,4,X=q4,€		//Llega un 4, cambiamos de estado y quitamos el primero de la pila
+
+q4,4,X=q4,€		//Si llegan 4, y es posible, se quitan de la pila
+q4,€,R=qf,€		//Si termina la cadena, y solo tenemos R en la pila, pasamos a estado final.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

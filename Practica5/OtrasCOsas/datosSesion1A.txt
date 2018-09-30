@@ -1,0 +1,52 @@
+LISTA DE EMAILS:
+dato: mail1@mail.com
+Mail 2 maila2@mail.com
+mail3@mail.com
+mail4@mail.com
+mail5@mail.com
+mail+mail@xc.es
+
+Lista de Webs:
+http://www.web.ejemplo.es
+http://web.ejemplo.es
+https://web.ejemplo2.es
+https://www.lak.es/es/sd~a.html
+
+Fechas:
+12-10-1991
+20-11-1986
+33-13-1986
+
+Telefonos:
+953-738909
+958-875422
+956-76-34-56
+0034958-123322
+0034 958-875867
++34958-123322
++34 958-124567
+
+Matriculas:
+2354-ABD
+2975-aaB
+1238-AOP
+
+Codigos Postales:
+CP:34533
+CP-34333
+CP:86566
+
+NIF:
+K97847589
+M87476589
+Y98497567
+Z89059045
+
+COMENTARIOS:
+//ComentarioEnLinea
+/*
+Comentario
+en
+Varias
+Lineas
+*/

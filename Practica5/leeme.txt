@@ -1,0 +1,5 @@
+Para lanzar el proyecto
+
+./lanzar.sh 
+
+Posteriormente abrir el index.html generado.
